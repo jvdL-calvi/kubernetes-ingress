@@ -409,7 +409,7 @@ class TestTransportServerTcpLoadBalance:
 
         assert len(endpoints) is 3
 
-
+    @pytest.mark.skip_for_nginx_oss
     def test_tcp_passing_healthcheck_with_match(
             self, kube_apis, crd_ingress_controller, transport_server_setup, ingress_controller_prerequisites
     ):
@@ -470,6 +470,7 @@ class TestTransportServerTcpLoadBalance:
 
         self.restore_ts(kube_apis, transport_server_setup)
 
+    @pytest.mark.skip_for_nginx_oss
     def test_tcp_failing_healthcheck_with_match(
             self, kube_apis, crd_ingress_controller, transport_server_setup, ingress_controller_prerequisites
     ):

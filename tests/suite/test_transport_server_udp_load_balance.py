@@ -222,6 +222,7 @@ class TestTransportServerUdpLoadBalance:
 
         self.restore_ts(kube_apis, transport_server_setup)
 
+    @pytest.mark.skip_for_nginx_oss
     def test_udp_passing_healthcheck_with_match(
             self, kube_apis, crd_ingress_controller, transport_server_setup, ingress_controller_prerequisites
     ):
@@ -284,6 +285,7 @@ class TestTransportServerUdpLoadBalance:
 
         self.restore_ts(kube_apis, transport_server_setup)
 
+    @pytest.mark.skip_for_nginx_oss
     def test_udp_failing_healthcheck_with_match(
             self, kube_apis, crd_ingress_controller, transport_server_setup, ingress_controller_prerequisites
     ):
